@@ -3,13 +3,13 @@
 use strict; 
 use warnings; 
 
-use feature qw(say);
 use App::FileWatcher; 
+use feature qw(say);
 
 my $watcher = App::FileWatcher->new(
-   pattern   => '.*txt',
-   directory => '/tmp',
-   action    => sub { say 'FIRING ACTION'; }, 
+   pattern   => 'test\.txt',
+   directory => '~/tmp',
+   action    => sub { say 'FIRED'; }, 
 );
-
+$watcher->watch;
 
